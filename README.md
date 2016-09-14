@@ -71,6 +71,8 @@ public class EventBusDemoActivity extends BaseActivity{
         public String time;
     }
 
+    //方法名可以任意
+    @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventMainThread(AnyEvent e){
         tv_receiver.setText("收到个事件：" + e.time);
     }
@@ -142,7 +144,7 @@ public void onEvent(param){
 }
 ```
 
-##4 新版的EventBus支持注解，尚未研究
+##4 新版的EventBus支持注解，也必须使用注解
 
 截止2016.4.16的新版本，是强制使用注解，基本代码就可以说明一切了
 
